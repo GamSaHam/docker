@@ -73,7 +73,13 @@ docker run -i -t -p 3306:3306 -p 192.168.0.100:7777:80 ubuntu:14.04
 rem 외부 포트 개방인 -p 3306을 개방하고 192.168.0.100아이피에 7777:80 포트를 개방한다
 rem 7777포트는 80 포트랑 연결 짓는다.
 
+docker run -d --name detach_test ubuntu:14.04
 
+docker run -i -t \
+--name mysql_attach_test \
+-e MYSQL_ROOT_PASSWORD=password \
+-e MYSQL_DATABASE=wordpress \
+mysql:5.
 
 
 

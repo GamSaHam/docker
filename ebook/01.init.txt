@@ -1,0 +1,52 @@
+
+// 도커 이미지 목록
+docker image ls 
+docker images
+
+// 도커 이미지 가지고 오기
+docker image pull ubuntu:latest
+
+// 도커 이미지 삭제
+docker rmi -f [이미지이름]
+
+// 도커 컨테이너 생성 후 실행
+docker container run -it ubuntu:latest /bin/bash 
+
+// 도커 컨테이너 목록
+docker container ls
+
+docker container exec -it 
+
+// 컨테이너 실행중인 터미널 접속
+docker attach [Container Name]
+docker container exec -it [Container Name] bash
+
+// 컨테이너 목록 조회
+docker ps -a
+docker container ls -a
+
+// 컨테이너 중지
+docker {container} stop [Container Name]
+
+// 컨테이너 삭제
+docker {container} rm [Container Name]
+
+// 파일에 내용 보기
+cat [파일 이름]
+
+// Dockerfiles 실행
+docker image build -t test:latest .
+
+// 도커 8080 포트를 외부연결
+docker container run -d \
+> --name web1 \
+> --publish 8080:8080 \
+> test:latest
+
+
+
+
+
+
+
+
